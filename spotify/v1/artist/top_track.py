@@ -12,6 +12,10 @@ class TopTrackList(Resource):
         params = {
             'country': country
         }
+        
+        if not country or len(country) < 2:
+            raise ValueError("The country parameter is required")
+        
         response = self.version.request('GET', '/artists/{}/top-tracks'.format(self.artist_id), params=params)
         return TopTrackPage(self.version, response.json(), 'tracks')
 
