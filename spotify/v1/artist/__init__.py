@@ -29,7 +29,7 @@ class ArtistContext(Resource):
         if not self._top_tracks:
             self._top_tracks = TopTrackList(self.version, self.id)
 
-        return self.top_tracks
+        return self._top_tracks
 
     @property
     def related_artists(self):
