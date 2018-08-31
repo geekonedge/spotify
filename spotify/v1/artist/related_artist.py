@@ -9,7 +9,7 @@ class RelatedArtistList(Resource):
         self.artist_id = artist_id
 
     def list(self):
-        response = self.version.request('GET', '/artist/{}/related-artists'.format(self.artist_id))
+        response = self.version.request('GET', '/artists/{}/related-artists'.format(self.artist_id))
         return RelatedArtistPage(self.version, response.json(), 'artists')
 
 
