@@ -16,7 +16,7 @@ class AlbumList(Resource):
             'limit': limit,
             'offset': offset
         })
-        response = self.version.request('GET', '/artist/{}/albums'.format(self.artist_id), params=params)
+        response = self.version.request('GET', '/artists/{}/albums'.format(self.artist_id), params=params)
         return AlbumPage(self.version, response.json(), 'items')
 
 
